@@ -3,6 +3,7 @@ plugins {
     id 'maven'
     id 'groovy'
     id 'org.springframework.boot' version '2.0.6.RELEASE'
+    id 'io.franzbecker.gradle-lombok' version '1.14'
 }
 
 group = 'com.frod'
@@ -18,10 +19,16 @@ tasks.withType(JavaCompile) {
 }
 
 repositories {
-     maven { url "http://repo.maven.apache.org/maven2" }
+     mavenCentral()
 }
 
 dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.6.RELEASE'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.6.RELEASE'
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+}
+
+lombok {
+    version = '1.18.2'
+    sha256 = ""
 }
