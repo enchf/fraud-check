@@ -36,7 +36,7 @@ Substitute the place holder by values to receive an evaluation.
 Also a `/health` endpoint is provided to test if the application is running.
 
 To run the test, use Gradle as `gradle clean test`.
-If you use IntelliJ, make sure you set the System Variable `spring.profiles.active` to `dev`.
+If you use IntelliJ, make sure you add `-Dspring.profiles.active=dev` in the VM options of Running configurations.
 
 ## Changelog
 

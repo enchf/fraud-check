@@ -4,6 +4,7 @@ import com.frod.fraudcheck.config.YAMLConfiguration;
 import com.frod.fraudcheck.domain.User;
 import com.frod.fraudcheck.score.Scorer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class FraudController {
 
     @Autowired
+    @Qualifier("phoneConsolidator")
     private Scorer<String> phoneScorer;
 
     @Autowired
+    @Qualifier("emailConsolidator")
     private Scorer<String> emailScorer;
 
     @Autowired
