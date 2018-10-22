@@ -27,12 +27,18 @@ Implementation of a sample fraud check module
 ## Application setup and run
 
 Clone the application and run `gradle build` to compile, execute testing and build.
-To run the application, run `gradle bootRun`.
+
+To run the application, run `gradle bootRun`. By default it will run using `prod` as the default environment.
+To run the application in `dev` mode, run `gradle bootRun -Penv=dev`.
 
 The fraud check module is run in web at `http://localhost:8080/fraud-check?phone={phone}&email={email}`.
 Substitute the place holder by values to receive an evaluation.
 Also a `/health` endpoint is provided to test if the application is running.
 
+To run the test, use Gradle as `gradle clean test`.
+If you use IntelliJ, make sure you set the System Variable `spring.profiles.active` to `dev`.
+
 ## Changelog
 
 - [EX1] Project setup. Using Java 8, Lombok, Spring and Gradle as base technologies.
+- [EX2] Enable configurable properties from Gradle.

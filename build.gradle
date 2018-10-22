@@ -24,11 +24,24 @@ repositories {
 
 dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.6.RELEASE'
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.6.RELEASE'
     compileOnly 'org.projectlombok:lombok:1.18.2'
+
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.6.RELEASE'
+    testCompile "org.assertj:assertj-core:3.11.1"
 }
 
 lombok {
     version = '1.18.2'
     sha256 = ""
+}
+
+test {
+    doFirst() {
+        systemProperty 'spring.profiles.active', 'dev'
+    }
+}
+
+bootRun {
+    def env = project.hasProperty('env') ? project.getProperty('env') : 'prod'
+    args = ["--spring.profiles.active=" + env]
 }
