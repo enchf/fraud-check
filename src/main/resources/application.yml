@@ -2,8 +2,15 @@ spring:
     profiles: dev
 name: dev-YAML
 environment: dev
+acceptedDomains:
+    - gmail.com
+    - frod.com
+    - msn.com
 ---
 spring:
     profiles: prod
 name: prod-YAML
 environment: prod
+acceptedDomains:
+    - corporative.com
+    - frod.com
