@@ -30,3 +30,6 @@
 
 ### OS Files ###
 **/.DS_Store
+
+### Project Files ###
+**/application.properties
