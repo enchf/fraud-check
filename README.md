@@ -42,3 +42,4 @@ If you use IntelliJ, make sure you set the System Variable `spring.profiles.acti
 
 - [EX1] Project setup. Using Java 8, Lombok, Spring and Gradle as base technologies.
 - [EX2] Enable configurable properties from Gradle.
+- [EX3] Create some Phone and Email fraud scorers.
