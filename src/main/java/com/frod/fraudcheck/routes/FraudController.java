@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class FraudController {
 
     @Autowired
-    @Qualifier("phoneConsolidator")
+    @Qualifier("phoneScorerWrapper")
     private Scorer<String> phoneScorer;
 
     @Autowired
-    @Qualifier("emailConsolidator")
+    @Qualifier("emailScorerWrapper")
     private Scorer<String> emailScorer;
 
     @Autowired
