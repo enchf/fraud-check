@@ -1,6 +1,8 @@
 package com.frod.fraudcheck.routes;
 
+import com.frod.fraudcheck.config.YAMLConfiguration;
 import com.frod.fraudcheck.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,9 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FraudController {
 
+    @Autowired
+    private YAMLConfiguration config;
+
     @GetMapping("/health")
     public String health() {
-        return "Up and running...";
+        return String.format("Up and running in %s environment...\n", config.getEnvironment());
     }
 
     @GetMapping("/fraud-check")
