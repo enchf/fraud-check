@@ -1,12 +1,12 @@
 package com.frod.fraudcheck.score;
 
+import com.frod.fraudcheck.domain.Email;
 import org.springframework.stereotype.Component;
 
-@Component("emailConsolidator")
-public class EmailScoreConsolidator implements Scorer<String> {
+import java.util.List;
 
-    @Override
-    public double score(String data) {
-        return 0;
-    }
+@Component("emailConsolidator")
+public class EmailScoreConsolidator extends Consolidator<String> {
+
+    private List<Scorer<Email>> emailScorers;
 }

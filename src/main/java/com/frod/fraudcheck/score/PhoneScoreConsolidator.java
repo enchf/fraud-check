@@ -1,12 +1,12 @@
 package com.frod.fraudcheck.score;
 
+import com.frod.fraudcheck.domain.Phone;
 import org.springframework.stereotype.Component;
 
-@Component("phoneConsolidator")
-public class PhoneScoreConsolidator implements Scorer<String> {
+import java.util.List;
 
-    @Override
-    public double score(String data) {
-        return 0;
-    }
+@Component("phoneConsolidator")
+public class PhoneScoreConsolidator extends Consolidator<String> {
+
+    private List<Scorer<Phone>> emailScorers;
 }
