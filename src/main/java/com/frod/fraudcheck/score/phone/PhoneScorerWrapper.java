@@ -1,6 +1,8 @@
-package com.frod.fraudcheck.score;
+package com.frod.fraudcheck.score.phone;
 
 import com.frod.fraudcheck.domain.Phone;
+import com.frod.fraudcheck.score.Consolidator;
+import com.frod.fraudcheck.score.Scorer;
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;

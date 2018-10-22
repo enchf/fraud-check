@@ -1,6 +1,8 @@
-package com.frod.fraudcheck.score;
+package com.frod.fraudcheck.score.email;
 
 import com.frod.fraudcheck.domain.Email;
+import com.frod.fraudcheck.score.Consolidator;
+import com.frod.fraudcheck.score.Scorer;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
