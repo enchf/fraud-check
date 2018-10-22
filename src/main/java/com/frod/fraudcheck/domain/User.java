@@ -1,4 +1,4 @@
-package com.frod.fraudcheck.model;
+package com.frod.fraudcheck.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
