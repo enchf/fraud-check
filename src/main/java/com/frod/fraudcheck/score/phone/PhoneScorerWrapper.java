@@ -1,5 +1,6 @@
 package com.frod.fraudcheck.score.phone;
 
+import com.frod.fraudcheck.config.YAMLConfiguration;
 import com.frod.fraudcheck.domain.Phone;
 import com.frod.fraudcheck.score.Consolidator;
 import com.frod.fraudcheck.score.Scorer;
@@ -21,13 +22,15 @@ public class PhoneScorerWrapper implements Scorer<String> {
     @Qualifier("phoneConsolidator")
     private Consolidator<Phone> consolidator;
 
-    @Value("${phone.default.region}")
-    private String phoneDefaultRegion;
+    @Autowired
+    private YAMLConfiguration configuration;
 
     @Override
     public double score(String phone) {
         try {
-            Phonenumber.PhoneNumber phoneNumber = PhoneNumberUtil.getInstance().parse(phone, phoneDefaultRegion);
+            Phonenumber.PhoneNumber phoneNumber = PhoneNumberUtil.getInstance()
+                    .parse(phone, configuration.getPhoneConfiguration().getDefaultRegion());
+
             Phone phoneWrapper = new Phone(String.format("+%d", phoneNumber.getCountryCode()),
                                            String.valueOf(phoneNumber.getNationalNumber()),
                                            phone);

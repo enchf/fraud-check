@@ -29,5 +29,6 @@ public class YAMLConfigurationTest {
         assertThat(environment).isNotNull();
         assertThat(configuration).isNotNull();
         assertThat(configuration.getEnvironment()).isEqualTo(environment);
+        assertThat(configuration.getPhoneConfiguration()).isNotNull();
     }
 }
