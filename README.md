@@ -42,4 +42,8 @@ If you use IntelliJ, make sure you add `-Dspring.profiles.active=dev` in the VM 
 
 - [EX1] Project setup. Using Java 8, Lombok, Spring and Gradle as base technologies.
 - [EX2] Enable configurable properties from Gradle.
-- [EX3] Create some Phone and Email fraud scorers.
+- [EX3] Define scorers wiring for email and phone generically.
+- [CR1] Keep only YAML configuration over properties file.
+- [CR2] Make Gradle unit testing be fancy verbose.
+- [CR3] Add a coverage tool and comply with it at 100% excluding trivial testing.
+- [EX4] Create enough scorers to make the application functionally workable. 
