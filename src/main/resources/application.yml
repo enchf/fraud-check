@@ -1,3 +1,6 @@
+phoneConfiguration:
+    defaultRegion: MX
+---
 spring:
     profiles: dev
 name: dev-YAML
@@ -6,8 +9,6 @@ acceptedDomains:
     - gmail.com
     - frod.com
     - msn.com
-phoneConfiguration:
-    defaultRegion: MX
 ---
 spring:
     profiles: prod
@@ -16,5 +17,3 @@ environment: prod
 acceptedDomains:
     - corporative.com
     - frod.com
-phoneConfiguration:
-    defaultRegion: MX
