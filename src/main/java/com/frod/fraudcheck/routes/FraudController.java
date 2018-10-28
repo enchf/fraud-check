@@ -15,12 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FraudController {
 
+    public static final String UP_AND_RUNNING = "Up and running in %s environment...\n";
+    public static final String PHONE_SCORER_QUALIFIER = "phoneScorerWrapper";
+    public static final String EMAIL_SCORER_QUALIFIER = "emailScorerWrapper";
+
     @Autowired
-    @Qualifier("phoneScorerWrapper")
+    @Qualifier(PHONE_SCORER_QUALIFIER)
     private Scorer<String> phoneScorer;
 
     @Autowired
-    @Qualifier("emailScorerWrapper")
+    @Qualifier(EMAIL_SCORER_QUALIFIER)
     private Scorer<String> emailScorer;
 
     @Autowired
@@ -28,7 +32,7 @@ public class FraudController {
 
     @GetMapping("/health")
     public String health() {
-        return String.format("Up and running in %s environment...\n", config.getEnvironment());
+        return String.format(UP_AND_RUNNING, config.getEnvironment());
     }
 
     @GetMapping(value = "/fraud-check", produces = "application/json")

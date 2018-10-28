@@ -28,9 +28,11 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.2'
     compile group: 'com.googlecode.libphonenumber', name: 'libphonenumber', version: '8.9.16'
     compile group: 'commons-validator', name: 'commons-validator', version: '1.6'
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.23'
 
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.6.RELEASE'
     testCompile "org.assertj:assertj-core:3.11.1"
+    testCompile group: 'com.github.javafaker', name: 'javafaker', version: '0.16'
 }
 
 jacoco {
