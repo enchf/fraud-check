@@ -55,6 +55,7 @@ test {
     doFirst() {
         systemProperty 'spring.profiles.active', 'dev'
     }
+    finalizedBy jacocoTestReport
 }
 
 bootRun {
